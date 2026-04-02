@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 50% 98%;
+    --foreground: 20 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 10%;
+    --primary: 25 80% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 40% 93%;
+    --secondary-foreground: 20 20% 15%;
+    --muted: 35 30% 94%;
+    --muted-foreground: 20 10% 45%;
+    --accent: 0 55% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 25 80% 45%;
+    --chart-1: 25 80% 50%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 49%;
+    --chart-5: 0 55% 35%;
+    --radius: 0.5rem;
+  }
+}
+
+/* Shared admin rich-text editor styles */
+.seo-editor .ck.ck-editor__main > .ck-editor__editable {
+  min-height: var(--seo-editor-min-h, 320px);
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.seo-editor .ck.ck-editor {
+  overflow: visible;
+}
+
+.seo-editor .ck.ck-editor__top .ck-sticky-panel,
+.seo-editor .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content,
+.seo-editor .ck.ck-editor__top .ck-toolbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100 !important;
+  background: #fff !important;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.seo-editor .ck.ck-editor__top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+/* Keep CKEditor balloons (link/table popups) above admin dialogs */
+.ck.ck-balloon-panel {
+  z-index: 99999 !important;
+}
+
+.ck-body-wrapper {
+  z-index: 99999 !important;
+}
+
+/* Ensure link form inputs inside CKEditor balloons are clickable and visible */
+.ck.ck-balloon-panel .ck-input {
+  pointer-events: auto !important;
+}
+
+.ck.ck-balloon-panel .ck-labeled-field-view {
+  pointer-events: auto !important;
+}
+
+/* Prevent Radix overlay from blocking CKEditor balloon clicks */
+.ck.ck-balloon-panel.ck-balloon-panel_visible {
+  pointer-events: auto !important;
+}
+
+.seo-editor .ck-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.seo-editor .ck-content table td,
+.seo-editor .ck-content table th {
+  border: 1px solid #d1d5db;
+  padding: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-orange-600 to-red-700;
+  }
+  .hero-gradient {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.05) 100%);
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+}
+
+/* Package detail SEO read-more: collapsed mode shows only first block, clamped to 3 lines */
+.package-seo-body.is-collapsed > *:not(:first-child) {
+  display: none;
+}
+
+.package-seo-body.is-collapsed > *:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* SEO Keyword Marquee */
+@keyframes kw-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.kw-marquee {
+  animation: kw-scroll 50s linear infinite;
+  will-change: transform;
+}
+.kw-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Generic rich-content read-more: collapsed mode shows first block in 3 lines */
+.rich-readmore-body.is-collapsed > *:not(:first-child) {
+  display: none;
+}
+
+.rich-readmore-body.is-collapsed > *:first-child {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+}

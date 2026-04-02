@@ -1,0 +1,323 @@
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1538ms
+ ✓ Compiled /middleware in 122ms (74 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 1827ms (909 modules)
+ ✓ Compiled in 124ms (430 modules)
+ GET / 200 in 3207ms
+ ✓ Compiled /privacy-policy in 402ms (904 modules)
+ GET /privacy-policy 200 in 1263ms
+ ✓ Compiled /terms-conditions in 146ms (915 modules)
+ GET /terms-conditions 200 in 510ms
+ ✓ Compiled /cancellation-policy in 141ms (923 modules)
+ GET /cancellation-policy 200 in 442ms
+ ✓ Compiled /faq in 430ms (938 modules)
+ GET /faq 200 in 703ms
+ ✓ Compiled /disclaimer in 148ms (944 modules)
+ GET /disclaimer 200 in 435ms
+ GET / 200 in 1088ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1609948543911-7239b4cfddbe?w=400&q=80 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1572638319789-e1e4814f8e56?w=400&q=80 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1572638319789-e1e4814f8e56?w=400&q=80 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1609948543911-7239b4cfddbe?w=400&q=80 404
+ ○ Compiling /tour-packages ...
+ ✓ Compiled /tour-packages in 1395ms (926 modules)
+ ✓ Compiled /api/[[...path]] in 284ms (538 modules)
+ GET /api/packages?search=Udaipur 200 in 2138ms
+ GET /api/packages?category=premium&search=Udaipur 200 in 578ms
+ GET /api/packages?category=spiritual&search=Udaipur 200 in 4023ms
+ GET /api/packages?category=wildlife&search=Udaipur 200 in 1476ms
+ GET /api/packages?category=adventure&search=Udaipur 200 in 1634ms
+ GET /api/packages?category=luxury&search=Udaipur 200 in 1666ms
+ GET /api/packages?category=heritage&search=Udaipur 200 in 729ms
+ GET /api/packages?search=Udaipur 200 in 3018ms
+ GET /api/packages?category=premium&search=Udaipur 200 in 789ms
+ GET /api/packages?category=spiritual&search=Udaipur 200 in 510ms
+ GET /api/packages?category=wildlife&search=Udaipur 200 in 1107ms
+ GET /api/packages?category=adventure&search=Udaipur 200 in 868ms
+ GET /api/packages?category=luxury&search=Udaipur 200 in 2296ms
+ GET /api/packages?category=heritage&search=Udaipur 200 in 419ms
+ GET /api/packages?search=Udaipur 200 in 438ms
+ GET /api/packages? 200 in 755ms
+ GET / 200 in 2033ms
+ ✓ Compiled in 2.4s (917 modules)
+ ✓ Compiled in 577ms (917 modules)
+ ✓ Compiled in 621ms (917 modules)
+ ✓ Compiled in 510ms (917 modules)
+ ✓ Compiled in 706ms (917 modules)
+ ✓ Compiled in 436ms (917 modules)
+ GET / 200 in 2891ms
+ ✓ Compiled in 770ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 1132ms
+ ✓ Compiled in 851ms (490 modules)
+ GET /?_rsc=r3yhw 200 in 534ms
+ ✓ Compiled in 596ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 414ms
+ ✓ Compiled in 494ms (490 modules)
+ GET /?_rsc=r3yhw 200 in 374ms
+ ✓ Compiled in 454ms (490 modules)
+ ✓ Compiled in 295ms (991 modules)
+ GET /?_rsc=r3yhw 200 in 975ms
+ GET /?_rsc=r3yhw 200 in 1088ms
+ ✓ Compiled in 1386ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 289ms
+ ✓ Compiled in 562ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 435ms
+ ✓ Compiled in 474ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 275ms
+ ✓ Compiled in 466ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 445ms
+ ✓ Compiled in 475ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 1254ms
+ ✓ Compiled in 584ms (1006 modules)
+ GET /?_rsc=r3yhw 200 in 1544ms
+ GET /?_rsc=r3yhw 200 in 1177ms
+ ✓ Compiled in 495ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 613ms
+ ✓ Compiled in 421ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 841ms
+ GET / 200 in 1147ms
+ ✓ Compiled in 882ms (442 modules)
+ GET / 200 in 617ms
+ ✓ Compiled in 494ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 302ms
+ ✓ Compiled in 447ms (991 modules)
+ GET /?_rsc=r3yhw 200 in 696ms
+ GET /?_rsc=r3yhw 200 in 560ms
+ ✓ Compiled in 534ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 342ms
+ ✓ Compiled in 1056ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 760ms
+ ✓ Compiled in 449ms (442 modules)
+ GET /?_rsc=r3yhw 200 in 340ms
+ ✓ Compiled in 961ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 625ms
+ GET / 200 in 1011ms
+ ✓ Compiled in 610ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 867ms
+ ✓ Compiled in 524ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 852ms
+ ✓ Compiled in 554ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 365ms
+ ✓ Compiled in 523ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 504ms
+ ✓ Compiled in 994ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 639ms
+ ✓ Compiled in 1167ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 976ms
+ ✓ Compiled in 734ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 398ms
+ ✓ Compiled in 698ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 559ms
+ ✓ Compiled in 740ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 473ms
+ ✓ Compiled in 625ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 310ms
+ ✓ Compiled in 1151ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 540ms
+ ✓ Compiled in 578ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 483ms
+ ✓ Compiled in 643ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 402ms
+ ✓ Compiled in 761ms (932 modules)
+ GET /?_rsc=r3yhw 200 in 443ms
+ ✓ Compiled in 615ms (932 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 510ms (920 modules)
+ GET /?_rsc=r3yhw 200 in 745ms
+ GET /_next/static/css/app/layout.css 404 in 758ms
+[Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'
+}
+[Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/7.pack.gz'
+}
+[Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/27.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat '/Users/Apple/Downloads/Working-rajasthan-main/.next/cache/webpack/server-development/3.pack.gz'
+ ⨯ Error: Cannot find module './8948.js'
+Require stack:
+- /Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js
+- /Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/_not-found/page.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/build/utils.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-server.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at __webpack_require__.f.require (/Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js:203:28)
+    at /Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (/Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (/Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js:162:22)
+    at /Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/page.js:1:61513
+    at Object.<anonymous> (/Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/page.js:1:61581)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1892:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+    at requirePage (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require.js:109:84)
+    at /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js:98:84
+    at async loadComponentsImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/base-server.js:1910:24)
+    at async DevServer.renderToResponseImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/base-server.js:1962:32)
+    at async DevServer.pipeImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/base-server.js:816:17)
+    at async /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/next-dev-server.js:339:20
+    at async Span.traceAsyncFn (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/start-server.js:141:13) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/_not-found/page.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/build/utils.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/hot-middleware.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/hot-reloader-webpack.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/router-server.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/lib/start-server.js'
+  ],
+  page: '/'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1190ms (1142 modules)
+ GET / 500 in 1558ms
+ GET /?_rsc=r3yhw 200 in 614ms
+ ✓ Compiled /_not-found in 110ms (533 modules)
+ GET / 200 in 1617ms
+ GET /_next/static/css/app/layout.css?v=1773813473628 404 in 575ms
+ GET /_next/static/chunks/main-app.js?v=1773813473628 404 in 1009ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 1238ms
+ GET /_next/static/chunks/app/not-found.js 404 in 1145ms
+ GET /_next/static/chunks/app/layout.js 404 in 830ms
+ GET /_next/static/chunks/app/page.js 404 in 522ms
+ ○ Compiling /blogs/[slug] ...
+ ✓ Compiled /blogs/[slug] in 772ms (1179 modules)
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- /Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js
+- /Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/blogs/[slug]/page.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/build/utils.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/static-paths-worker.js
+- /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1420:15)
+    at /Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/Apple/Downloads/Working-rajasthan-main/.next/server/webpack-runtime.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/.next/server/app/blogs/[slug]/page.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/require.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/load-components.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/build/utils.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/server/dev/static-paths-worker.js',
+    '/Users/Apple/Downloads/Working-rajasthan-main/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ],
+  page: '/blogs/rajasthani-cuisine-must-try-dishes'
+}
+ GET / 200 in 1083ms
+ GET /_next/static/css/app/layout.css?v=1773813478636 404 in 541ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 842ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1609948543911-7239b4cfddbe?w=400&q=80 404
+ GET /_next/static/chunks/app/not-found.js 404 in 975ms
+ GET /_next/static/chunks/app/page.js 404 in 976ms
+ GET /_next/static/chunks/app/layout.js 404 in 646ms
+ GET /_next/static/chunks/main-app.js?v=1773813478636 404 in 1569ms
+ GET / 200 in 792ms
+ GET /_next/static/css/app/layout.css?v=1773813483603 404 in 558ms
+ GET /_next/static/chunks/app/layout.js 404 in 754ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 1004ms
+ GET /_next/static/chunks/main-app.js?v=1773813483603 404 in 1048ms
+ GET /_next/static/chunks/app/page.js 404 in 1102ms
+ GET /_next/static/chunks/app/not-found.js 404 in 1190ms
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1609948543911-7239b4cfddbe?w=400&q=80 404
+ ⨯ upstream image response failed for https://images.unsplash.com/photo-1572638319789-e1e4814f8e56?w=400&q=80 404
+[?25h
