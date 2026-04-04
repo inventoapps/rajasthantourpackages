@@ -413,7 +413,12 @@ export default function AdminPackages() {
                     <div className="bg-amber-100 text-amber-700 font-bold px-3 py-1 rounded">Day {day.day}</div>
                     <div className="flex-1 space-y-2">
                       <Input placeholder="Day Title (e.g., Arrival & City Tour)" value={day.title} onChange={e => updateItinerary(idx, 'title', e.target.value)} />
-                      <Textarea placeholder="Day Description..." value={day.description} onChange={e => updateItinerary(idx, 'description', e.target.value)} className="min-h-[80px]" />
+                      <SeoEditor
+                        value={day.description}
+                        onChange={(val) => updateItinerary(idx, 'description', val)}
+                        placeholder="Day Description — add formatted text, lists, links…"
+                        minHeight="120px"
+                      />
                     </div>
                     <Button type="button" variant="ghost" size="sm" onClick={() => removeItinerary(idx)} className="text-red-500 hover:text-red-700">
                       <X className="w-4 h-4" />

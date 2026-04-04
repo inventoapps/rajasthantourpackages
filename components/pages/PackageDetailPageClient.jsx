@@ -131,7 +131,7 @@ export default function PackageDetailPage({ pkg, related = [], navTours = [], na
                       </div>
                       <div className="p-4 flex-1">
                         <h3 className="font-bold text-stone-900 mb-1">{day.title}</h3>
-                        <p className="text-sm text-stone-600 leading-relaxed">{day.description}</p>
+                        <div className="text-sm text-stone-600 leading-relaxed prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5" dangerouslySetInnerHTML={{ __html: day.description }} />
                       </div>
                     </div>
                   </Card>
