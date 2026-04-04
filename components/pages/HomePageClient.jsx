@@ -267,6 +267,19 @@ export default function HomePage({
   const adventurePkgs = allPkgs.filter(p => ['adventure', 'wildlife'].includes(p.category)).slice(0, 3);
   const heritagePkgs = allPkgs.filter(p => ['heritage', 'premium', 'luxury'].includes(p.category)).slice(0, 3);
 
+  /* ── Group packages by duration (days) ── */
+  const getDays = (pkg) => {
+    const m = pkg.duration?.match(/(\d+)\s*Day/i);
+    return m ? parseInt(m[1], 10) : 0;
+  };
+  const pkgsByDuration = {
+    1: allPkgs.filter(p => getDays(p) === 1),
+    2: allPkgs.filter(p => getDays(p) === 2),
+    3: allPkgs.filter(p => getDays(p) === 3),
+    4: allPkgs.filter(p => getDays(p) === 4),
+    '5to10': allPkgs.filter(p => { const d = getDays(p); return d >= 5 && d <= 10; }),
+  };
+
   return (
     <div className="min-h-screen" data-testid="homepage">
       <DynamicHeaderClient tours={navTours} blogs={navBlogs} destinations={navDestinations} variant="transparent" siteSettings={siteSettings} />
@@ -391,13 +404,42 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* ===== SEO CONTENT (from Admin) ===== */}
-      {homepageSettings.seo_content && (
-        <SeoContentSection content={homepageSettings.seo_content} />
+      {/* ===== PACKAGES BY DAYS — 1 DAY ===== */}
+      {pkgsByDuration[1].length > 0 && (
+        <section className="section-padding bg-stone-50" data-testid="1-day-packages-section" aria-labelledby="1-day-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3"><Clock className="w-3 h-3 mr-1 inline" />1 Day Tour</Badge>
+                <h2 id="1-day-heading" className="text-3xl sm:text-4xl font-bold text-stone-900">1 Day Rajasthan Tour Packages</h2>
+                <p className="text-stone-500 mt-2">Quick day trips to explore Rajasthan's top attractions — perfect for short schedules & weekend plans.</p>
+              </div>
+              <Link href="/tour-packages/1-day-rajasthan-tour-packages"><Button variant="outline" className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-full">View All 1 Day Tours <ArrowRight className="w-4 h-4 ml-1" /></Button></Link>
+            </div>
+            <PackageCardsGridWithEnquiry packages={pkgsByDuration[1].slice(0, 6)} />
+          </div>
+        </section>
+      )}
+
+      {/* ===== PACKAGES BY DAYS — 2 DAYS ===== */}
+      {pkgsByDuration[2].length > 0 && (
+        <section className="section-padding bg-white" data-testid="2-day-packages-section" aria-labelledby="2-day-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3"><Clock className="w-3 h-3 mr-1 inline" />2 Days Tour</Badge>
+                <h2 id="2-day-heading" className="text-3xl sm:text-4xl font-bold text-stone-900">2 Days Rajasthan Tour Packages</h2>
+                <p className="text-stone-500 mt-2">Weekend getaways covering Jaipur, Pushkar, or Udaipur with overnight stays & guided sightseeing.</p>
+              </div>
+              <Link href="/tour-packages/2-day-rajasthan-tour-packages"><Button variant="outline" className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-full">View All 2 Day Tours <ArrowRight className="w-4 h-4 ml-1" /></Button></Link>
+            </div>
+            <PackageCardsGridWithEnquiry packages={pkgsByDuration[2].slice(0, 6)} />
+          </div>
+        </section>
       )}
 
       {/* ===== DESTINATIONS ===== */}
-      <section className="section-padding bg-white" data-testid="destinations-section" aria-labelledby="destinations-heading">
+      <section className="section-padding bg-stone-50" data-testid="destinations-section" aria-labelledby="destinations-heading">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3">Popular Destinations</Badge>
@@ -435,6 +477,62 @@ export default function HomePage({
           )}
         </div>
       </section>
+
+      {/* ===== PACKAGES BY DAYS — 3 DAYS ===== */}
+      {pkgsByDuration[3].length > 0 && (
+        <section className="section-padding bg-white" data-testid="3-day-packages-section" aria-labelledby="3-day-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3"><Clock className="w-3 h-3 mr-1 inline" />3 Days Tour</Badge>
+                <h2 id="3-day-heading" className="text-3xl sm:text-4xl font-bold text-stone-900">3 Days Rajasthan Tour Packages</h2>
+                <p className="text-stone-500 mt-2">Short trips covering 2 nights with visits to Jaipur forts, Pushkar temples, or Udaipur lakes.</p>
+              </div>
+              <Link href="/tour-packages/3-day-rajasthan-tour-packages"><Button variant="outline" className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-full">View All 3 Day Tours <ArrowRight className="w-4 h-4 ml-1" /></Button></Link>
+            </div>
+            <PackageCardsGridWithEnquiry packages={pkgsByDuration[3].slice(0, 6)} />
+          </div>
+        </section>
+      )}
+
+      {/* ===== CTA 1: GET FREE QUOTE ===== */}
+      <section className="relative py-20 overflow-hidden" data-testid="cta-1-section" aria-label="Plan your Rajasthan trip - request a free quote">
+        <div className="absolute inset-0">{IMG_CTA_DESERT && <Image src={IMG_CTA_DESERT} alt="Sam Sand Dunes Jaisalmer - Rajasthan desert safari at sunset" fill sizes="100vw" unoptimized className="w-full h-full object-cover" />}<div className="absolute inset-0 bg-gradient-to-r from-amber-900/90 via-amber-800/80 to-orange-900/90" /></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Plan Your Dream Rajasthan Trip</h2>
+              <p className="text-amber-100/80 text-lg mb-6">Tell us your preferences and our travel experts will craft a personalized itinerary just for you. Free consultation, no obligations!</p>
+              <div className="flex flex-wrap gap-4 text-sm text-amber-200">
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />Customized Itinerary</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />Best Price Match</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />24hr Response</span>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+              <h3 className="text-white font-semibold text-lg mb-4">Get a Free Quote</h3>
+              <EnquiryForm compact />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PACKAGES BY DAYS — 4 DAYS ===== */}
+      {pkgsByDuration[4].length > 0 && (
+        <section className="section-padding bg-white" data-testid="4-day-packages-section" aria-labelledby="4-day-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3"><Clock className="w-3 h-3 mr-1 inline" />4 Days Tour</Badge>
+                <h2 id="4-day-heading" className="text-3xl sm:text-4xl font-bold text-stone-900">4 Days Rajasthan Tour Packages</h2>
+                <p className="text-stone-500 mt-2">City duo tours covering Jaipur-Jodhpur or Jaipur-Udaipur with heritage forts & palace visits.</p>
+              </div>
+              <Link href="/tour-packages/4-day-rajasthan-tour-packages"><Button variant="outline" className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-full">View All 4 Day Tours <ArrowRight className="w-4 h-4 ml-1" /></Button></Link>
+            </div>
+            <PackageCardsGridWithEnquiry packages={pkgsByDuration[4].slice(0, 6)} />
+          </div>
+        </section>
+      )}
 
       {/* ===== PLACES TO VISIT ===== */}
       <section className="section-padding bg-stone-50" data-testid="places-to-visit-section" aria-labelledby="places-heading">
@@ -479,27 +577,27 @@ export default function HomePage({
         </div>
       </section>
 
-      {/* ===== CTA 1: GET FREE QUOTE ===== */}
-      <section className="relative py-20 overflow-hidden" data-testid="cta-1-section" aria-label="Plan your Rajasthan trip - request a free quote">
-        <div className="absolute inset-0">{IMG_CTA_DESERT && <Image src={IMG_CTA_DESERT} alt="Sam Sand Dunes Jaisalmer - Rajasthan desert safari at sunset" fill sizes="100vw" unoptimized className="w-full h-full object-cover" />}<div className="absolute inset-0 bg-gradient-to-r from-amber-900/90 via-amber-800/80 to-orange-900/90" /></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Plan Your Dream Rajasthan Trip</h2>
-              <p className="text-amber-100/80 text-lg mb-6">Tell us your preferences and our travel experts will craft a personalized itinerary just for you. Free consultation, no obligations!</p>
-              <div className="flex flex-wrap gap-4 text-sm text-amber-200">
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />Customized Itinerary</span>
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />Best Price Match</span>
-                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4" />24hr Response</span>
+      {/* ===== PACKAGES BY DAYS — 5 TO 10 DAYS ===== */}
+      {pkgsByDuration['5to10'].length > 0 && (
+        <section className="section-padding bg-white" data-testid="5-10-day-packages-section" aria-labelledby="5-10-day-heading">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+              <div>
+                <Badge className="bg-amber-50 text-amber-700 border-amber-200 mb-3"><Clock className="w-3 h-3 mr-1 inline" />5–10 Days Tour</Badge>
+                <h2 id="5-10-day-heading" className="text-3xl sm:text-4xl font-bold text-stone-900">5 to 10 Days Rajasthan Tour Packages</h2>
+                <p className="text-stone-500 mt-2">Extended tours covering the full Rajasthan circuit — Jaipur, Jodhpur, Jaisalmer, Udaipur, Ranthambore & more.</p>
               </div>
+              <Link href="/tour-packages/5-day-rajasthan-tour-packages"><Button variant="outline" className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-full">View All 5-10 Day Tours <ArrowRight className="w-4 h-4 ml-1" /></Button></Link>
             </div>
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <h3 className="text-white font-semibold text-lg mb-4">Get a Free Quote</h3>
-              <EnquiryForm compact />
-            </div>
+            <PackageCardsGridWithEnquiry packages={pkgsByDuration['5to10'].slice(0, 6)} />
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* ===== SEO CONTENT (from Admin) ===== */}
+      {homepageSettings.seo_content && (
+        <SeoContentSection content={homepageSettings.seo_content} />
+      )}
 
       {/* ===== ITINERARIES BY DURATION ===== */}
       <section className="section-padding bg-stone-50" data-testid="itineraries-duration-section" aria-labelledby="itineraries-heading">

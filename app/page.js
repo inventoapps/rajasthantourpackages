@@ -39,7 +39,7 @@ export async function generateMetadata() {
 export default async function HomePage() {
   const [featuredPkgs, allPkgs, blogs, reviews, homepageSettings, navData, siteSettings, destinations] = await Promise.all([
     getPackages({ featured: true, limit: 6 }),
-    getPackages({ limit: 20 }),
+    getPackages({ limit: 100 }),
     getBlogs({ published: true, limit: 3 }),
     getReviews({ limit: 6 }),
     getHomepageSettings(),
