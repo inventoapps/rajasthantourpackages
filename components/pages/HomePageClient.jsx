@@ -62,6 +62,7 @@ const ITINERARIES_BY_DURATION = [
     startPrice: '4,999',
     color: 'amber',
     img: IMG_ITINERARY_WEEKEND,
+    durationSlug: '3-day-rajasthan-tour-packages',
   },
   {
     days: '4–5',
@@ -73,6 +74,7 @@ const ITINERARIES_BY_DURATION = [
     startPrice: '8,999',
     color: 'orange',
     img: IMG_ITINERARY_CLASSIC,
+    durationSlug: '5-day-rajasthan-tour-packages',
   },
   {
     days: '6–7',
@@ -84,6 +86,7 @@ const ITINERARIES_BY_DURATION = [
     startPrice: '14,999',
     color: 'rose',
     img: IMG_ITINERARY_GRAND,
+    durationSlug: '7-day-rajasthan-tour-packages',
   },
   {
     days: '8–10',
@@ -95,6 +98,7 @@ const ITINERARIES_BY_DURATION = [
     startPrice: '22,999',
     color: 'emerald',
     img: IMG_ITINERARY_COMPLETE,
+    durationSlug: '10-day-rajasthan-tour-packages',
   },
 ];
 
@@ -548,7 +552,7 @@ export default function HomePage({
                       <p className="text-xs text-stone-400">Starting from</p>
                       <p className="text-lg font-bold text-amber-700">₹{it.startPrice}<span className="text-xs text-stone-400 font-normal">/person</span></p>
                     </div>
-                    <Link href={`/tour-packages`}>
+                    <Link href={`/tour-packages/${it.durationSlug}`}>
                       <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white rounded-full text-xs px-4">View Tours</Button>
                     </Link>
                   </div>

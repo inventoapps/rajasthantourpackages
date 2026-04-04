@@ -21,6 +21,20 @@ const CATEGORIES = [
   { value: 'adventure', label: 'Adventure' }, { value: 'wildlife', label: 'Wildlife' }, { value: 'spiritual', label: 'Spiritual' }, { value: 'premium', label: 'Premium' },
 ];
 
+const DURATIONS = [
+  { value: 'all', label: 'Any Duration' },
+  { value: '1', label: '1 Day' },
+  { value: '2', label: '2 Days' },
+  { value: '3', label: '3 Days' },
+  { value: '4', label: '4 Days' },
+  { value: '5', label: '5 Days' },
+  { value: '6', label: '6 Days' },
+  { value: '7', label: '7 Days' },
+  { value: '8', label: '8 Days' },
+  { value: '9', label: '9 Days' },
+  { value: '10', label: '10 Days' },
+];
+
 /* ── static SEO data ── */
 const TOUR_FAQS = [
   { question: 'What types of Rajasthan tour packages do you offer?', answer: 'We offer a wide range of tour packages including Heritage & Culture tours, Luxury Palace tours, Desert Safari adventures, Wildlife & Tiger Safari, Spiritual & Pilgrimage tours, Honeymoon & Romantic getaways, Family holidays, and customized private tours. Each package is crafted to provide authentic Rajasthan experiences.' },
@@ -61,11 +75,13 @@ export default function TourPackagesPage({
   initialPackages = [],
   initialCategory = 'all',
   initialSearch = '',
+  initialDuration = 'all',
   reviews = [],
 }) {
   const [packages, setPackages] = useState(initialPackages);
   const [category, setCategory] = useState(initialCategory);
   const [search, setSearch] = useState(initialSearch);
+  const [duration, setDuration] = useState(initialDuration);
   const [loading, setLoading] = useState(false);
   const [enquiryPkg, setEnquiryPkg] = useState(null);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -85,8 +101,9 @@ export default function TourPackagesPage({
     const params = new URLSearchParams();
     if (category !== 'all') params.set('category', category);
     if (search) params.set('search', search);
+    if (duration !== 'all') params.set('duration', duration);
     fetch(`/api/packages?${params}`).then(r => r.json()).then(d => { setPackages(d); setLoading(false); }).catch(() => setLoading(false));
-  }, [category, search]);
+  }, [category, search, duration]);
 
   return (
     <div className="min-h-screen bg-stone-50" data-testid="tour-packages-page">
@@ -105,16 +122,25 @@ export default function TourPackagesPage({
 
       {/* ══════ FILTERS + PACKAGES GRID ══════ */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        <div className="flex flex-wrap gap-2 mb-8">
+        {/* Category filters */}
+        <div className="flex flex-wrap gap-2 mb-4">
           {CATEGORIES.map(c => (
             <button key={c.value} onClick={() => setCategory(c.value)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${category === c.value ? 'bg-amber-600 text-white shadow-md' : 'bg-white text-stone-600 hover:bg-amber-50 border border-stone-200'}`} data-testid={`category-${c.value}`}>{c.label}</button>
+          ))}
+        </div>
+
+        {/* Duration filters */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          <span className="flex items-center text-xs font-semibold text-stone-500 uppercase tracking-wider mr-1"><Clock className="w-3.5 h-3.5 mr-1" />Duration:</span>
+          {DURATIONS.map(d => (
+            <button key={d.value} onClick={() => setDuration(d.value)} className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${duration === d.value ? 'bg-stone-800 text-white shadow-md' : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'}`} data-testid={`duration-${d.value}`}>{d.label}</button>
           ))}
         </div>
 
         {loading ? (
           <div className="flex justify-center py-20"><div className="w-10 h-10 border-4 border-amber-200 border-t-amber-600 rounded-full animate-spin" /></div>
         ) : packages.length === 0 ? (
-          <div className="text-center py-20"><p className="text-xl text-stone-500 mb-4">No packages found</p><Button onClick={() => { setCategory('all'); setSearch(''); }}>Clear Filters</Button></div>
+          <div className="text-center py-20"><p className="text-xl text-stone-500 mb-4">No packages found</p><Button onClick={() => { setCategory('all'); setSearch(''); setDuration('all'); }}>Clear Filters</Button></div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.map(pkg => (

@@ -21,8 +21,9 @@ export default async function TourPackagesPage({ searchParams }) {
   const params = await searchParams;
   const category = params?.category || 'all';
   const search = params?.search || '';
+  const duration = params?.duration || 'all';
   const [packages, reviews] = await Promise.all([
-    getPackages({ category, search, limit: 100 }),
+    getPackages({ category, search, duration: duration !== 'all' ? duration : undefined, limit: 100 }),
     getReviews(),
   ]);
 
@@ -54,6 +55,7 @@ export default async function TourPackagesPage({ searchParams }) {
         initialPackages={packages}
         initialCategory={category}
         initialSearch={search}
+        initialDuration={duration}
         reviews={reviews}
       />
     </>

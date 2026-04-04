@@ -73,6 +73,7 @@ export async function GET(request, context) {
       const cat = searchParams.get('category');
       const featured = searchParams.get('featured');
       const search = searchParams.get('search');
+      const duration = searchParams.get('duration');
       const limit = parseInt(searchParams.get('limit')) || 100;
       const exclude = searchParams.get('exclude');
 
@@ -81,6 +82,7 @@ export async function GET(request, context) {
         if (cat && cat !== 'all') q = q.eq('category', cat);
         if (featured === 'true') q = q.eq('is_featured', true);
         if (search) q = q.or(`title.ilike.%${search}%,location.ilike.%${search}%`);
+        if (duration) q = q.ilike('duration', `${duration} Day%`);
         if (exclude) q = q.neq('id', exclude);
         q = q.order('is_featured', { ascending: false }).order('rating', { ascending: false }).limit(limit);
         const { data, error } = await q;
@@ -90,6 +92,7 @@ export async function GET(request, context) {
       if (cat && cat !== 'all') filtered = filtered.filter(p => p.category === cat);
       if (featured === 'true') filtered = filtered.filter(p => p.is_featured);
       if (search) { const s = search.toLowerCase(); filtered = filtered.filter(p => p.title.toLowerCase().includes(s) || p.location.toLowerCase().includes(s)); }
+      if (duration) { filtered = filtered.filter(p => { const m = p.duration?.match(/(\d+)\s*Day/i); return m && m[1] === duration; }); }
       if (exclude) filtered = filtered.filter(p => p.id !== exclude);
       return json(filtered.slice(0, limit));
     }

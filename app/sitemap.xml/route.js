@@ -142,6 +142,15 @@ export async function GET() {
   const staticRoutes = await collectStaticRoutes(appDir);
   const dynamicUrls = [...(await getDynamicBlogUrls()), ...(await getDynamicPackageUrls())];
 
+  /* Duration category pages (1–10 day packages) */
+  const durationUrls = Array.from({ length: 10 }, (_, i) => ({
+    url: `/tour-packages/${i + 1}-day-rajasthan-tour-packages`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: '0.85',
+    image: null,
+  }));
+
   const staticEntries = staticRoutes.map((route) => {
     const isHome = route === '/';
     const isListing = route === '/blogs' || route === '/tour-packages';
@@ -166,7 +175,7 @@ export async function GET() {
   });
 
   const deduped = new Map();
-  for (const item of [...staticEntries, ...dynamicEntries]) deduped.set(item.url, item);
+  for (const item of [...staticEntries, ...dynamicEntries, ...durationUrls]) deduped.set(item.url, item);
   const urls = Array.from(deduped.values());
 
   const xmlItems = urls
