@@ -120,23 +120,35 @@ export default function PackageDetailPage({ pkg, related = [], navTours = [], na
 
             {/* ITINERARY */}
             <section id="itinerary" className="scroll-mt-36" data-testid="itinerary-section">
-              <h2 className="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-2"><CalendarDays className="w-5 h-5 text-amber-600" />Day-by-Day Itinerary</h2>
-              <div className="space-y-4">
+              <h2 className="text-2xl font-bold text-stone-900 mb-6 flex items-center gap-2"><CalendarDays className="w-5 h-5 text-amber-600" />Day-by-Day Itinerary</h2>
+              <Accordion type="single" collapsible defaultValue="day-0" className="space-y-3">
                 {pkg.itinerary?.map((day, i) => (
-                  <Card key={i} className="border-0 shadow-md overflow-hidden">
-                    <div className="flex">
-                      <div className="w-16 sm:w-24 bg-amber-600 flex flex-col items-center justify-center text-white p-2.5 sm:p-3 shrink-0">
-                        <span className="text-xs uppercase font-medium">Day</span>
-                        <span className="text-xl sm:text-2xl font-bold">{day.day || i + 1}</span>
+                  <AccordionItem key={i} value={`day-${i}`} className="border-0">
+                    <AccordionTrigger className="group hover:no-underline p-0 [&>svg]:hidden">
+                      <div className="flex items-center gap-3 sm:gap-4 w-full bg-white rounded-xl shadow-sm border border-stone-200 px-3 sm:px-4 py-3 transition-all duration-200 hover:shadow-md hover:border-amber-300 group-data-[state=open]:border-amber-400 group-data-[state=open]:shadow-md">
+                        {/* Day number circle */}
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 text-white flex flex-col items-center justify-center shrink-0 shadow-sm">
+                          <span className="text-[9px] sm:text-[10px] uppercase font-semibold leading-none tracking-wider">Day</span>
+                          <span className="text-sm sm:text-base font-bold leading-none">{day.day || i + 1}</span>
+                        </div>
+                        {/* Title */}
+                        <p className="flex-1 text-left font-semibold text-stone-800 text-sm sm:text-base leading-snug">{day.title}</p>
+                        {/* Chevron indicator */}
+                        <div className="w-7 h-7 rounded-full bg-amber-50 group-data-[state=open]:bg-amber-100 flex items-center justify-center shrink-0">
+                          <ChevronRight className="w-4 h-4 text-amber-600 transition-transform duration-200 group-data-[state=open]:rotate-90" />
+                        </div>
                       </div>
-                      <div className="p-4 flex-1">
-                        <h3 className="font-bold text-stone-900 mb-1">{day.title}</h3>
-                        <div className="text-sm text-stone-600 leading-relaxed prose prose-sm max-w-none prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5" dangerouslySetInnerHTML={{ __html: day.description }} />
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-0 pt-0">
+                      <div className="ml-[1.35rem] sm:ml-6 pl-5 sm:pl-6 border-l-2 border-amber-200 pt-2 pb-1">
+                        <div className="bg-stone-50 rounded-xl p-4 sm:p-5 border border-stone-100">
+                          <div className="text-sm text-stone-700 leading-relaxed prose prose-sm max-w-none prose-p:my-1.5 prose-ul:my-1.5 prose-ol:my-1.5 prose-li:my-0.5 prose-headings:text-stone-800 prose-a:text-amber-700" dangerouslySetInnerHTML={{ __html: day.description }} />
+                        </div>
                       </div>
-                    </div>
-                  </Card>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
+              </Accordion>
             </section>
 
             {/* INCLUSIONS & EXCLUSIONS */}

@@ -28,6 +28,7 @@ function revalidatePackagePaths(slug) {
   revalidatePath('/tour-packages');
   if (slug) revalidatePath(`/tour-packages/${slug}`);
   revalidatePath('/sitemap.xml');
+  revalidatePath('/sitemap-packages.xml');
 }
 
 function revalidateBlogPaths(slug) {
@@ -35,6 +36,7 @@ function revalidateBlogPaths(slug) {
   revalidatePath('/blogs');
   if (slug) revalidatePath(`/blogs/${slug}`);
   revalidatePath('/sitemap.xml');
+  revalidatePath('/sitemap-blogs.xml');
 }
 
 const DEST_EXTRA_COLS = ['gallery', 'how_to_reach', 'key_attractions', 'travel_tips', 'faqs', 'best_time_details'];
@@ -44,6 +46,7 @@ function revalidateDestinationPaths(slug) {
   revalidatePath('/destinations');
   if (slug) revalidatePath(`/destinations/${slug}`);
   revalidatePath('/sitemap.xml');
+  revalidatePath('/sitemap-destinations.xml');
 }
 
 export async function OPTIONS() { return new NextResponse(null, { status: 200, headers: CORS }); }
@@ -293,6 +296,7 @@ export async function POST(request, context) {
       revalidatePath('/');
       revalidatePath('/destinations');
       revalidatePath('/sitemap.xml');
+      revalidatePath('/sitemap-destinations.xml');
       STATIC_DESTINATIONS.forEach(d => d.slug && revalidatePath(`/destinations/${d.slug}`));
       if (errors.length > 0) return json({ success: false, inserted, errors }, 207);
       return json({ success: true, inserted });
@@ -337,6 +341,10 @@ export async function POST(request, context) {
       revalidatePath('/tour-packages');
       revalidatePath('/destinations');
       revalidatePath('/sitemap.xml');
+      revalidatePath('/sitemap-pages.xml');
+      revalidatePath('/sitemap-packages.xml');
+      revalidatePath('/sitemap-blogs.xml');
+      revalidatePath('/sitemap-destinations.xml');
       return json({ success: true, packages: pkgs?.length || 0, blogs: blogs?.length || 0, reviews: revs?.length || 0, destinations: destCount });
     }
 

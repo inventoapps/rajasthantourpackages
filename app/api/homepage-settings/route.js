@@ -90,6 +90,7 @@ export async function POST(request) {
 
     revalidatePath('/');
     revalidatePath('/sitemap.xml');
+    revalidatePath('/sitemap-pages.xml');
 
     return NextResponse.json(data);
   } catch (error) {
