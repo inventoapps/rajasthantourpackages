@@ -91,6 +91,7 @@ export default function AdminPackages() {
   const [form, setForm] = useState(emptyPkg);
   const [saving, setSaving] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const fetchPackages = async () => {
     setLoading(true);
@@ -246,9 +247,29 @@ export default function AdminPackages() {
         </Button>
       </div>
 
+      {/* Search */}
+      <div className="mb-4">
+        <Input
+          placeholder="Search packages by title, location, duration..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="max-w-md"
+        />
+      </div>
+
       {loading ? <p>Loading...</p> : (
         <div className="space-y-4">
-          {packages.map(pkg => (
+          {packages.filter(pkg => {
+            if (!searchQuery.trim()) return true;
+            const q = searchQuery.toLowerCase();
+            return (
+              (pkg.title || '').toLowerCase().includes(q) ||
+              (pkg.location || '').toLowerCase().includes(q) ||
+              (pkg.slug || '').toLowerCase().includes(q) ||
+              (pkg.duration || '').toLowerCase().includes(q) ||
+              (pkg.category || '').toLowerCase().includes(q)
+            );
+          }).map(pkg => (
             <Card key={pkg.id} className="overflow-hidden">
               <CardContent className="p-4">
                 <div className="flex items-center gap-4">
@@ -280,6 +301,10 @@ export default function AdminPackages() {
             </Card>
           ))}
           {packages.length === 0 && <p className="text-center text-muted-foreground py-8">No packages found. Add one or seed the database from Setup.</p>}
+          {packages.length > 0 && searchQuery.trim() && packages.filter(pkg => {
+            const q = searchQuery.toLowerCase();
+            return (pkg.title || '').toLowerCase().includes(q) || (pkg.location || '').toLowerCase().includes(q) || (pkg.slug || '').toLowerCase().includes(q) || (pkg.duration || '').toLowerCase().includes(q) || (pkg.category || '').toLowerCase().includes(q);
+          }).length === 0 && <p className="text-center text-muted-foreground py-8">No packages match &ldquo;{searchQuery}&rdquo;</p>}
         </div>
       )}
 

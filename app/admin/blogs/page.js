@@ -135,6 +135,7 @@ export default function AdminBlogs() {
   const [form, setForm] = useState(emptyBlog);
   const [saving, setSaving] = useState(false);
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const fetchBlogs = async () => {
     setLoading(true);
@@ -245,9 +246,30 @@ export default function AdminBlogs() {
         </Button>
       </div>
 
+      {/* Search */}
+      <div className="mb-4">
+        <Input
+          placeholder="Search blogs by title, category, author..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="max-w-md"
+        />
+      </div>
+
       {loading ? <p>Loading...</p> : (
         <div className="space-y-4">
-          {blogs.map(blog => (
+          {blogs.filter(blog => {
+            if (!searchQuery.trim()) return true;
+            const q = searchQuery.toLowerCase();
+            return (
+              (blog.title || '').toLowerCase().includes(q) ||
+              (blog.slug || '').toLowerCase().includes(q) ||
+              (blog.category || '').toLowerCase().includes(q) ||
+              (blog.author || '').toLowerCase().includes(q) ||
+              (blog.excerpt || '').toLowerCase().includes(q) ||
+              (blog.tags || []).some(t => t.toLowerCase().includes(q))
+            );
+          }).map(blog => (
             <Card key={blog.id}>
               <CardContent className="p-4">
                 <div className="flex items-center gap-4">
@@ -279,6 +301,10 @@ export default function AdminBlogs() {
             </Card>
           ))}
           {blogs.length === 0 && <p className="text-center text-muted-foreground py-8">No blog posts found. Create one or seed the database from Setup.</p>}
+          {blogs.length > 0 && searchQuery.trim() && blogs.filter(blog => {
+            const q = searchQuery.toLowerCase();
+            return (blog.title || '').toLowerCase().includes(q) || (blog.slug || '').toLowerCase().includes(q) || (blog.category || '').toLowerCase().includes(q) || (blog.author || '').toLowerCase().includes(q) || (blog.excerpt || '').toLowerCase().includes(q) || (blog.tags || []).some(t => t.toLowerCase().includes(q));
+          }).length === 0 && <p className="text-center text-muted-foreground py-8">No blogs match &ldquo;{searchQuery}&rdquo;</p>}
         </div>
       )}
 
