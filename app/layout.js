@@ -71,11 +71,16 @@ export default async function RootLayout({ children }) {
       <head>
         {faviconUrl ? (
           <>
-            <link rel="icon" href={faviconUrl} type="image/x-icon" />
+            <link rel="icon" href={faviconUrl} />
+            <link rel="shortcut icon" href={faviconUrl} />
             <link rel="apple-touch-icon" href={faviconUrl} />
           </>
         ) : (
-          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+          <>
+            <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+            <link rel="shortcut icon" href="/favicon.ico" />
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+          </>
         )}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>

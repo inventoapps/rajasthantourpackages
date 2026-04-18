@@ -132,7 +132,7 @@ export default function PackageDetailPage({ pkg, related = [], navTours = [], na
                           <span className="text-sm sm:text-base font-bold leading-none">{day.day || i + 1}</span>
                         </div>
                         {/* Title */}
-                        <p className="flex-1 text-left font-semibold text-stone-800 text-sm sm:text-base leading-snug">{day.title}</p>
+                        <h3 className="flex-1 text-left font-semibold text-stone-800 text-sm sm:text-base leading-snug">{day.title}</h3>
                         {/* Chevron indicator */}
                         <div className="w-7 h-7 rounded-full bg-amber-50 group-data-[state=open]:bg-amber-100 flex items-center justify-center shrink-0">
                           <ChevronRight className="w-4 h-4 text-amber-600 transition-transform duration-200 group-data-[state=open]:rotate-90" />
